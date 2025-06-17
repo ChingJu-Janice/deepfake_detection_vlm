@@ -48,7 +48,7 @@ python inference.py \
 ```
 
 ## Pretrained Weights
-
+[預訓練權重檔](https://github.com/ChingJu-Janice/deepfake_detection_vlm/releases)
 
 ## Results
 以下是不同模型在測試資料上的效能表現：

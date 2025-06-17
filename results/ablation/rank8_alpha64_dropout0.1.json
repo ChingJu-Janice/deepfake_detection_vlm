@@ -1,0 +1,10 @@
+{
+  "AUC": 0.839,
+  "EER": 0.2,
+  "F1": 0.934,
+  "Accuracy": 0.8818,
+  "rank": 8,
+  "alpha": 64,
+  "dropout": 0.1,
+  "parameter_count": 0.19490642176035639
+}

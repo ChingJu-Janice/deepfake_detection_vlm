@@ -59,10 +59,9 @@ def main():
     save_csv(val_df,   output_dir / "val.csv")
     save_csv(test_df,  output_dir / "test.csv")
 
-    # print(f"train.csv → total={len(train_df)} | real={(train_df['label']==0).sum()} | fake={(train_df['label']==1).sum()}")
-    # print(f"val.csv   → total={len(val_df)}   | real={(val_df['label']==0).sum()} | fake={(val_df['label']==1).sum()}")
-    # print(f"test.csv  → total={len(test_df)}  | real={(test_df['label']==0).sum()} | fake={(test_df['label']==1).sum()}")
+    print(f"train.csv → total={len(train_df)} | real={(train_df['label']==0).sum()} | fake={(train_df['label']==1).sum()}")
+    print(f"val.csv   → total={len(val_df)}   | real={(val_df['label']==0).sum()} | fake={(val_df['label']==1).sum()}")
+    print(f"test.csv  → total={len(test_df)}  | real={(test_df['label']==0).sum()} | fake={(test_df['label']==1).sum()}")
     print("finished splitting dataset.")
 if __name__ == "__main__":
-
     main()

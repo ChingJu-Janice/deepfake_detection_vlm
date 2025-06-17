@@ -1,10 +1,11 @@
 import torch
 import torch.nn as nn
+import os
 from transformers import CLIPModel, CLIPProcessor
 from peft import LoraConfig, get_peft_model
 
 
-class CLIPLoRADetector(nn.Module):
+class CLIPLoRAModel(nn.Module):
     """
     使用 CLIP ViT-B/32 作為 backbone，結合 LoRA 進行高效微調，
     搭配線性分類器進行二分類（deepfake / real）。
@@ -53,3 +54,9 @@ class CLIPLoRADetector(nn.Module):
         features = self.backbone.get_image_features(pixel_values=pixel_tensor)
         logits = self.classifier(features)
         return logits.squeeze(1)
+    
+    def save_weights(self, path):
+        os.makedirs(os.path.dirname(path), exist_ok=True)
+        torch.save(self.state_dict(), path)
+            
+        # self.backbone.save_pretrained(f"{os.path.dirname(path)}/lora_adapter")
